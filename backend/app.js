@@ -18,10 +18,10 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors());
 
-app.use("/api/prodcuts", productRoutes);
+app.use("/api/products", productRoutes);
 app.use("/api/users" , userRoutes)
 app.use("/api/comments" , commentRouter)
-
+ 
 
 monoose
   .connect("mongodb://localhost/mern-shop")
