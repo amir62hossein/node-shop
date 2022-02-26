@@ -7,9 +7,11 @@ const userImageStorage = require("../middleware/user-image-upload");
 const uploadAvatar = multer({ storage: userImageStorage });
 
 userRouter.post(
-  "/",
+  "/register",
   uploadAvatar.single("profilePic"),
   userController.createUser
 );
+
+userRouter.post("/login", userController.loginUser);
 
 module.exports = userRouter;
